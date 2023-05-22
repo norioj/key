@@ -25,5 +25,5 @@ if CheckHardwareID() == true then
 end
 
 if CheckHardwareID(HWID) == false then
-    game.Players.LocalPlayer:Kick("You are not Whitelisted!")
+    game.Players.LocalPlayer:Kick("Wait to add wl")
 end
