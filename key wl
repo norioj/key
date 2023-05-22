@@ -1,7 +1,7 @@
 ---check wl----
 local HWID = game:GetService("RbxAnalyticsService"):GetClientId()
 
-local WhitelistedHardwareID = {""}
+local WhitelistedHardwareID = {"2450CFAD-4A3A-4A62-9CC1-79C4DDBE5057"}
 
  
 
