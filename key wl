@@ -1,1 +1,29 @@
-885133498128691271:cac:388AC956-9A59-445C-A7BA-151BC84C9086
+---check wl----
+local HWID = game:GetService("RbxAnalyticsService"):GetClientId()
+
+local WhitelistedHardwareID = {""}
+
+ 
+
+function CheckHardwareID()
+
+for _,whitelisted in pairs(WhitelistedHardwareID) do
+ if HWID == whitelisted then
+     return true
+ elseif HWID ~= whitelisted then
+     return false
+       end
+    end
+end
+
+setclipboard(HWID) --if you want to get your HardwareID
+
+ 
+
+if CheckHardwareID() == true then
+ print("You are Whitelisted!")
+end
+
+if CheckHardwareID(HWID) == false then
+    game.Players.LocalPlayer:Kick("You are not Whitelisted!")
+end
