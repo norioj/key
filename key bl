@@ -19,9 +19,8 @@ _G.RamSetting1 = {
     ["Enable"] = true,
     ["Delay"] = 300, -- 300 sec
 }
-]]
 
---[[
+
 
 _G.Setting1 = {
     ['Team'] = "Pirates",  -- Marines / Pirates
