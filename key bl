@@ -1,1 +1,222 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/lam29042008/script/main/opl"))()
+_G.Setting1 = {['WhiteScreen'] = true}
+
+_G.KAITAN1CLICK = true
+_G.Fruit1 = {
+    ['BuyFruit'] = true, -- true / false
+    ['SelectDevil'] = {
+        [1]= "Dark-Dark",
+        [3]= "Light-Light",
+        [6]= "Sand -Sand",
+        [7]= "Ice-Ice"
+    },--,"Dragon-Dragon","Quake-Quake","String-String","Venom-Venom"
+    ['MainFruit'] = {
+        [1] = "Dough-Dough",
+    },
+    ['SinperFruit_mode'] = true
+}
+_G.RamSetting1 = {
+    ["Enable"] = true,
+    ["Delay"] = 300, -- 300 sec
+}
+]]
+
+--[[
+
+_G.Setting1 = {
+    ['Team'] = "Pirates",  -- Marines / Pirates
+    ['FPS_Boost'] = true,
+    ['WhiteScreen'] = true, -- true / false -- จอขาว
+
+    ['AutoRedeem'] = true -- true / false
+    ['RedeemOnLv'] = 100
+
+    ['HideUI'] = true
+}
+_G.farmer1 = {
+    ['AutoFarm'] = true, -- true / false
+    ['Farm_Mode'] = {"Level", "NearMob"} --  "Level","Bone", "NearMob","Ectoplas","Rengoku","DripMama","NearMob","Cocoa"
+
+    ["GetMaterialGodhuman"] = true,
+
+    ['Mastery_Farm'] = false, -- true / false
+    ['Mastery_Mode'] = {"Fruit","Gun","Sword"}, -- {"Gun"}  if want to farm mastery gun
+    ['FruitFull_skill'] = false,
+    ['AutoChangeSword'] = false,
+    --working sync with savesetting
+    ['HealthMas'] = 20,
+    ['HealthMasBoss'] = 5,
+
+}
+_G.RamSetting1 = {
+    ["Enable"] = true,
+    ["Delay"] = 300, -- 300 sec
+    ["ControlButton"] = true,
+    ["Description"] = {
+        [1] = "Level",
+        [2] = "Melee",
+        [3] = "Fruit",
+        [4] = "Race",
+        [5] = "World",
+        [6] = "Beli",
+        [7] = "Bounty/Honor",
+        [8] = "Fragment",
+        [9] = "PullLever",
+        [10] = "Mirror",
+        [11] = "Valkyrie",
+        [12] = "CDK",
+        [13] = "Tushita",
+        [14] = "Soul Guitar",
+        [15] = "Scythe",
+        [16] = "InventoryFruit",
+    },
+    ["Alias"]  = {
+        [1] = "Level",
+        [2] = "Melee",
+        [3] = "Fruit",
+        [4] = "Race",
+        [5] = "World",
+        [6] = "Beli",
+        [7] = "Bounty/Honor",
+        [8] = "Fragment",
+        [9] = "PullLever",
+        [10] = "Mirror",
+        [11] = "Valkyrie",
+        [12] = "CDK",
+        [13] = "Tushita",
+        [14] = "Soul Guitar",
+        [15] = "Scythe",
+        [16] = "InventoryFruit",
+    },
+}
+_G.Sword_Farm = {"Saber","Shisui"}
+_G.sea_I = {
+    ['AutoSea2'] = true, -- true
+    ['SecretQuest'] = true,
+    ['Open_Saber'] = true,
+    ['Pole_v1'] = false
+}
+
+_G.sea_II = {
+    ['AutoSea3'] = true, -- true
+    ['Bartilo'] = true,
+    ['AutoFlower'] = false,
+    ['EvoRaceV3'] = false,
+    ['AutoDarkbeard'] = false
+}
+
+_G.sea_III = {
+    ['AutoPullLever'] = false,
+    ['AutoCDK'] = false,
+    ['SoulGuitar'] = false,
+    ['RainbowHaki'] = false,
+    ['PirateRaid'] = false,
+    ['Scythe'] = false,
+    ['BuddySword'] = false,
+    ['DarkDager'] = false,
+    ['SpikeyTrident'] = false,
+    ['Canvander'] = false,
+    ['Tushita'] = false,
+    ['EliteHunt'] = false,
+    ['Elite_mode'] = "Elite"--"Elite","Yama","God Chalice"
+}
+_G.Raid1 = {
+    ['AutoRaid'] = true ,-- true / false
+    ['RaidMode'] = "Raid Normal",-- "Raid Normal" , "Awake Skill"
+    ['GetFruit_Method'] = {"FruitInventory","BringFruit","Hop"}
+    ['ChipCant_StoreFruit'] = true
+    --working sync with savesetting
+    ['AutoAwaken'] = true,
+    ['AutoSelectChip'] = true,
+    ['Chip'] = "Dark-Dark"
+}
+_G.Race1 = {
+    ['RaceSniper'] = false, -- true / false
+    ['Select_Want_Race'] = {"Human","Mink","Skypiea","Fishman"},
+}
+_G.Fruit1 = {
+    ['RandomFruit'] = true,
+    ['StoreFruit'] = true,
+    ['BringFruit'] = true,
+
+    ['BuyFruit'] = true, -- true / false
+    ['MainFruit'] = {
+        [1] = "Dark-Dark",
+    },
+    ['SelectDevil'] = {
+        [1] = "BDark-Dark",
+    },
+    ['SinperFruit_mode'] = true
+}
+_G.Boss1 = {
+    ['FarmBoss'] = true,
+    ['Hop_Boss'] = true,
+    ['BossMode'] = "Boss" --"Boss" / "AllBoss"
+}
+_G.tool1 = {
+    ['SelectToolWeapon'] = "",
+
+    ['AutoMeleeWeapon'] = true, -- true / false
+    ['Make_Melee'] = {"Superhuman","Electric Claw","Dargon Talon","Sharkman Karate","Death Step","Godhuman"}
+
+}
+
+_G.SaveSettingSync = {
+    -- saveseting and config work king together --
+    ['3meleebe'] = true,--3 melee before sea3
+    ['Block_All_Hop'] = true,
+    ['HopNoMob'] = false
+
+    ['BuyHakiColor'] = true,
+    ['BuyLegndarySword'] = true,
+    ['AutoSetting_Skill'] = true,
+
+    ['WebHookUrl'] = "https://discord.com/api/webhooks/00000000000000000000000000000",
+    ['BestSheetUrl'] = "https://sheet.best/api/",
+    ['LineToken'] = 'xxxxxxxxxxxxxxxxx'
+
+    ['UIPage'] = 1  -- 1 - 12
+}
+
+_G.Shop1 = {
+    ['BuyEctoplasItem'] = true,
+    ['BuyCommon'] = true,
+    ['BuyHaki'] = true ,-- autobuy Buso haki Skyjump
+    ['BuyKabcha'] = true, -- true / false
+    ['BuyBisento'] = true,
+    ['BuyTrueTripleKatana'] = true,
+    ['BoneTrade'] = true,
+    ['BuyPole2'] = true,
+    ['CandyTrade'] = true
+}
+
+_G.Lock1 = {
+    -- saveseting and config work king together --
+    ['LockLevel'] = true,
+    ['LockLevel_Amount'] = 2450,
+
+    ['LockFragments'] = true,
+    ['LockFragments_Amount'] = 5000,
+
+    ['LockBeli'] = true,
+    ['LockBeli_Amount'] = 10000000,
+
+    ['LockAwaken'] = true,
+
+    ['LockMode'] = "Shutdown" -- "Shutdown","Kick"
+}
+
+_G.Hop1 = {
+    ['Tween_Chest'] = true,
+
+    ['Hop_Item_Function'] = true,
+    ['Legendary_Hop'] = true,
+    ['BringFruit_Hop'] = true
+}
+
+_G.SaveSettingConfig = {
+    ["HopGameLag"] = false
+}
+
+repeat wait() until game:IsLoaded()
+script_key = "CbIVWGlsrFpSHqpYyIHPkJHLDxrPGivB"
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/220bfd207ccd66b16cad3b537de84aab.lua"))()
