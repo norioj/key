@@ -11,7 +11,7 @@ _G.Fruit1 = {
     },--,"Dragon-Dragon","Quake-Quake","String-String","Venom-Venom"
     ['MainFruit'] = {
         [1] = "Dough-Dough",
-    },
+    },a
     ['SinperFruit_mode'] = true
 }
 _G.RamSetting1 = {
