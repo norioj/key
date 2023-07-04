@@ -5,13 +5,14 @@ _G.Fruit1 = {
     ['BuyFruit'] = true, -- true / false
     ['SelectDevil'] = {
         [1]= "Dark-Dark",
-        [3]= "Light-Light",
-        [6]= "Sand -Sand",
-        [7]= "Ice-Ice"
+        [2]= "Light-Light",
+        [3]= "Ice-Ice"
     },--,"Dragon-Dragon","Quake-Quake","String-String","Venom-Venom"
     ['MainFruit'] = {
-        [1] = "Dough-Dough",
-    },a
+        [1]= "Dark-Dark",
+        [2]= "Light-Light",
+        [3]= "Ice-Ice"
+    },
     ['SinperFruit_mode'] = true
 }
 _G.RamSetting1 = {
@@ -50,7 +51,7 @@ _G.farmer1 = {
 _G.RamSetting1 = {
     ["Enable"] = true,
     ["Delay"] = 300, -- 300 sec
-    ["ControlButton"] = true,
+    ["ControlButton"] = false,
     ["Description"] = {
         [1] = "Level",
         [2] = "Melee",
@@ -106,11 +107,11 @@ _G.sea_II = {
 
 _G.sea_III = {
     ['AutoPullLever'] = false,
-    ['AutoCDK'] = false,
-    ['SoulGuitar'] = false,
+    ['AutoCDK'] = true,
+    ['SoulGuitar'] = true,
     ['RainbowHaki'] = false,
     ['PirateRaid'] = false,
-    ['Scythe'] = false,
+    ['Scythe'] = true,
     ['BuddySword'] = false,
     ['DarkDager'] = false,
     ['SpikeyTrident'] = false,
@@ -127,7 +128,7 @@ _G.Raid1 = {
     --working sync with savesetting
     ['AutoAwaken'] = true,
     ['AutoSelectChip'] = true,
-    ['Chip'] = "Dark-Dark"
+    ['Chip'] = "Dark"
 }
 _G.Race1 = {
     ['RaceSniper'] = false, -- true / false
@@ -140,16 +141,16 @@ _G.Fruit1 = {
 
     ['BuyFruit'] = true, -- true / false
     ['MainFruit'] = {
-        [1] = "Dark-Dark",
+        [1] = "Dark-Dark"
     },
     ['SelectDevil'] = {
-        [1] = "BDark-Dark",
+        [1] = "Dark-Dark"
     },
     ['SinperFruit_mode'] = true
 }
 _G.Boss1 = {
-    ['FarmBoss'] = true,
-    ['Hop_Boss'] = true,
+    ['FarmBoss'] = false,
+    ['Hop_Boss'] = false,
     ['BossMode'] = "Boss" --"Boss" / "AllBoss"
 }
 _G.tool1 = {
@@ -162,13 +163,13 @@ _G.tool1 = {
 
 _G.SaveSettingSync = {
     -- saveseting and config work king together --
-    ['3meleebe'] = true,--3 melee before sea3
+    ['3meleebe'] = true ,--3 melee before sea3
     ['Block_All_Hop'] = true,
     ['HopNoMob'] = false
 
     ['BuyHakiColor'] = true,
     ['BuyLegndarySword'] = true,
-    ['AutoSetting_Skill'] = true,
+    ['AutoSetting_Skill'] = false,
 
     ['WebHookUrl'] = "https://discord.com/api/webhooks/00000000000000000000000000000",
     ['BestSheetUrl'] = "https://sheet.best/api/",
@@ -178,15 +179,15 @@ _G.SaveSettingSync = {
 }
 
 _G.Shop1 = {
-    ['BuyEctoplasItem'] = true,
-    ['BuyCommon'] = true,
-    ['BuyHaki'] = true ,-- autobuy Buso haki Skyjump
-    ['BuyKabcha'] = true, -- true / false
-    ['BuyBisento'] = true,
-    ['BuyTrueTripleKatana'] = true,
-    ['BoneTrade'] = true,
-    ['BuyPole2'] = true,
-    ['CandyTrade'] = true
+    ['BuyEctoplasItem'] = false,
+    ['BuyCommon'] = false,
+    ['BuyHaki'] = false,-- autobuy Buso haki Skyjump
+    ['BuyKabcha'] = false, -- true / false
+    ['BuyBisento'] = false,
+    ['BuyTrueTripleKatana'] = false,
+    ['BoneTrade'] = false,
+    ['BuyPole2'] = false,
+    ['CandyTrade'] = false
 }
 
 _G.Lock1 = {
@@ -206,17 +207,16 @@ _G.Lock1 = {
 }
 
 _G.Hop1 = {
-    ['Tween_Chest'] = true,
+    ['Tween_Chest'] = false,
 
-    ['Hop_Item_Function'] = true,
-    ['Legendary_Hop'] = true,
-    ['BringFruit_Hop'] = true
+    ['Hop_Item_Function'] = false,
+    ['Legendary_Hop'] = false,
+    ['BringFruit_Hop'] = false
 }
 
 _G.SaveSettingConfig = {
     ["HopGameLag"] = false
 }
 
-repeat wait() until game:IsLoaded()
 script_key = "CbIVWGlsrFpSHqpYyIHPkJHLDxrPGivB"
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/220bfd207ccd66b16cad3b537de84aab.lua"))()
