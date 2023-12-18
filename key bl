@@ -1,8 +1,210 @@
-return {
-"b8d99da4e88594db703231f9210235d1",
-"c4c88e1b87d37551e722404b54428370",
-"de75e2c08e2a8d16de0a08cc7e0ca9e6",
-"aafb2f6151e884a87ba01f87d9c6cf79",
-"de75e2c08e2a8d16de0a08cc7e0ca9e6",
-"374e4c39ec353a01a3375a37e4785e1f",
-}
+--[[
+  __  ____      _____             _____ _____                                                              
+ |  \/  \ \    / /__ \      /\   |  __ \_   _|                                                             
+ | \  / |\ \  / /   ) |    /  \  | |__) || |                                                               
+ | |\/| | \ \/ /   / /    / /\ \ |  ___/ | |                                                               
+ | |  | |  \  /   / /_   / ____ \| |    _| |_                                                              
+ |_|__|_|   \/   |____| /_/    \_\_|___|_____|             __          __            _        _____ _     _ _              _____ _____ 
+ |  _ \     | | | |            |__   __| |                 \ \        / /           ( )      / ____| |   (_) |       /\   |  __ \_   _|
+ | |_) | ___| |_| |_ ___ _ __     | |  | |__   __ _ _ __    \ \  /\  / /__ _   _ ___|/ ___  | (___ | |__  _| |_     /  \  | |__) || |  
+ |  _ < / _ \ __| __/ _ \ '__|    | |  | '_ \ / _` | '_ \    \ \/  \/ / _ \ | | |_  / / __|  \___ \| '_ \| | __|   / /\ \ |  ___/ | |  
+ | |_) |  __/ |_| ||  __/ |       | |  | | | | (_| | | | |    \  /\  /  __/ |_| |/ /  \__ \  ____) | | | | | |_   / ____ \| |    _| |_ 
+ |____/ \___|\__|\__\___|_|       |_|  |_| |_|\__,_|_| |_|     \/  \/ \___|\__,_/___| |___/ |_____/|_| |_|_|\__| /_/    \_\_|   |_____|
+                                                                                           
+                                                                                                                                         
+
+        You Can't Suggest Anything In The Discord
+        discord.gg/mv2
+
+ ]]
+
+--[[
+    Made by:
+        Sakata
+
+    Black Hating Edition
+]]
+
+if not setreadonly then game.Players.LocalPlayer:Kick("x.synapse.to") end
+
+setreadonly(table, false)
+
+local ver = 0
+
+local mv2 = {}
+mv2['generaterandomstring'] = function(a)
+    local let = ('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890'):split('')
+    local string = '' 
+    for i = 1, a do 
+        string = string..let[math.random(1, #let)]
+    end 
+    return string 
+end
+mv2['findAndReturnValue'] = function(table, str)
+    assert(typeof(table) == "table", string.format("invalid argument #1 to '%s' (table expected, got %s)", "findAndReturnValue", typeof(table)))
+    assert(typeof(str) == "string", string.format("invalid argument #1 to '%s' (string expected, got %s)", "findAndReturnValue", typeof(str)))
+    for i, v in pairs(table) do
+        if string.find(str, v) then
+            return v
+        end
+    end
+    return false
+end
+mv2["humanoidrootpart"] = function()
+    return game.Players and game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+end
+mv2["humanoid"] = function() 
+    return game.Players and game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid")
+end
+mv2["tween"] = function(speed, pos)
+    if mv2.humanoidrootpart() then
+    if typeof(pos) == "CFrame" then pos = pos.p end
+        local speed = (mv2.humanoidrootpart().Position - pos).Magnitude / speed
+        game:GetService("TweenService"):Create(mv2.humanoidrootpart(), TweenInfo.new(speed, Enum.EasingStyle.Linear), {CFrame = CFrame.new(pos)}):Play() task.wait(speed)
+    end
+end
+mv2["walkTo"] = function(Pos)
+    if mv2.humanoid() then
+        mv2.humanoid():MoveTo(Pos)
+    end
+end
+mv2["isExist"] = function(obj)
+    NewObjName = mv2.generaterandomstring(10)
+    oldObjName = obj and obj.Name
+    obj.Name = NewObjName
+    if obj ~= nil or obj.Parent:FindFirstChild(NewObjName) then
+        obj.Name = oldObjName
+        return true
+    else
+        return false
+    end
+end
+mv2["notify"] = function(title, description, duration)
+    pcall(function()
+        game.StarterGui:SetCore("SendNotification", {
+            Title = title;
+            Text = description;
+            Duration = duration;
+        })
+    end)
+end
+mv2["isSynapse"] = function()
+    if syn then
+        return true
+    else
+        return false
+    end
+end
+mv2["isSynV3"] = function()
+    local exploit = identifyexecutor and table.concat({ identifyexecutor() }, " ") or "Unknown"
+    if exploit:gmatch("/") then
+        exploit = exploit:split("/")[1]
+    end
+    if mv2.isSynapse() and exploit:lower():match("v3") then
+        return true
+    end
+    return false
+end
+mv2['isKrnl'] = function()
+    if Krnl then
+        return true
+    else
+        return false
+    end
+end
+mv2['ver'] = ver
+mv2['magnitude'] = function(v1, v2)
+    -- print(mv2.humanoidrootpart().Position, v2, v1)
+    return ((v2 or mv2.humanoidrootpart().Position) - v1).magnitude
+    -- return (v1-v2).Magnitude
+end
+mv2['afunc'] = function(f)
+    local wa = coroutine.create(
+    function()
+        f()
+    end)
+    coroutine.resume(wa)
+end
+mv2["getField"] = function(part)
+    part = part or mv2.humanoidrootpart()
+    local ray = Ray.new(part.Position+Vector3.new(0, -35, 0), Vector3.new(0,100, 0))
+    local hit, hitPos = workspace:FindPartOnRayWithWhitelist(ray, {game.Workspace.FlowerZones})
+    if hit and hit.Parent.Name == "FlowerZones" then
+        return hit
+    else
+        return nil
+    end
+end
+
+mv2['tableFind'] = function(tt, va)
+    for i,v in pairs(tt) do
+        if v == va then
+            return i
+        end
+    end
+end
+
+mv2['findValue'] = function(Table, Value)
+    if type(Table) == "table" then
+        for index, value in pairs(Table) do
+            if value == Value then
+                return true
+            end
+        end
+    else
+        return false
+    end
+    return false
+end
+mv2['returnValue'] = function(tab, val)
+    ok = false
+    for i,v in pairs(tab) do
+        if string.match(val, v) then
+            ok = v
+            break
+        end
+    end
+    return ok
+end
+
+
+do
+    local oldt;oldt = hookfunction(getrenv().debug.traceback, function(lol) -- secure_call thing
+		local traceback = oldt(lol)
+		if checkcaller() then
+			return tostring(lol).."\n"..traceback:split("\n")[2].."\n"
+		end
+		return oldt(lol)
+	end)
+end
+
+getgenv().secureCall = function(Function, Script, ...)
+    assert(Script ~= nil or typeof(Script) == "Instance", string.format("invalid argument #1 to '%s' (table expected, got %s)", "secureCall", typeof(Script)))
+    assert(Function ~= nil or typeof(Function) == "function", string.format("invalid argument #2 to '%s' (table expected, got %s)", "secureCall", typeof(Function)))
+    assert(Script.ClassName == "LocalScript" or Script.ClassName == "ModuleScript", string.format("bad argument to #3 to '%s' (LocalScript or ModuleScript expected, got %s)", "secureCall", Script.ClassName))
+    if mv2.isSynV3() then
+        local Info = debug.getinfo(Function)
+        local Options = {script = Script,
+            identity = 2,
+            env = getsenv(Script),
+            thread = getscriptthread and getscriptthread(Script)}
+        local Callstack = {Info}
+    end
+
+    if mv2.isSynV3() then
+        return syn.trampoline_call(Function, Callstack, Options, ...)
+    elseif not mv2["isSynV3"]() and mv2.isSynapse() then
+        return syn.secure_call(Function, Script, ...)
+    elseif mv2["isKrnl"]() then
+        return coroutine.wrap(function(...)
+        setthreadcontext(2)
+        setfenv(0, getsenv(Script))
+        setfenv(1, getsenv(Script))
+        return Function(...)
+        end)(...)
+    end
+end
+
+setreadonly(table, false)
+
+return mv2
