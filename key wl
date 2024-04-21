@@ -29,7 +29,7 @@ pcall(function()
     
 
 local WindowFocusReleasedFunction = function()
-    RunService:Set3dRenderingEnabled(false)
+    RunService:Set3dRenderingEnabled(true)
     setfpscap(15)
     return
 end
@@ -124,30 +124,3 @@ w.DescendantAdded:Connect(function(v)
         end
     end)
 end)
-    game:GetService("Lighting"):ClearAllChildren()
-
-    for _, v in pairs(Workspace:GetDescendants()) do
-        clearTextures(v)
-    end
-
-    Workspace.DescendantAdded:Connect(function(v)
-        clearTextures(v)
-    end)
-
-    for _, v in pairs(game.Players:GetChildren()) do
-        for _, v2 in pairs(v.Character:GetDescendants()) do
-            if v2:IsA("BasePart") or v2:IsA("Decal") then
-                v2.Transparency = 1
-            end
-        end
-    end
-
-    game.Players.PlayerAdded:Connect(function(player)
-        player.CharacterAdded:Connect(function(character)
-            for _, v in pairs(character:GetDescendants()) do
-                if v:IsA("BasePart") or v:IsA("Decal") then
-                    v.Transparency = 1
-                end
-            end
-        end)
-    end)
