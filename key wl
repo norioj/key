@@ -3,30 +3,30 @@ if not game:IsLoaded() then game:IsLoaded():Wait(5) end
 local UserInputService = game:GetService("UserInputService")
 local RunService = game:GetService("RunService")
 pcall(function()
-		for _, v in pairs(game:GetService("Workspace"):FindFirstChild("__THINGS"):GetChildren()) do
-			if table.find({"ShinyRelics", "Ornaments", "Instances", "Ski Chairs"}, v.Name) then
-				v:Destroy()
-			end
-		end
+        for _, v in pairs(game:GetService("Workspace"):FindFirstChild("__THINGS"):GetChildren()) do
+            if table.find({"ShinyRelics", "Ornaments", "Instances", "Ski Chairs"}, v.Name) then
+                v:Destroy()
+            end
+        end
 
-		for _, v in pairs(game:GetService("Workspace"):FindFirstChild("__THINGS").__INSTANCE_CONTAINER.Active.AdvancedFishing:GetChildren()) do
-			if string.find(v.Name, "Model") or string.find(v.Name, "Water") or string.find(v.Name, "Debris") or string.find(v.Name, "Interactable") then
-				v:Destroy()
-			end
+        for _, v in pairs(game:GetService("Workspace"):FindFirstChild("__THINGS").__INSTANCE_CONTAINER.Active.AdvancedFishing:GetChildren()) do
+            if string.find(v.Name, "Model") or string.find(v.Name, "Water") or string.find(v.Name, "Debris") or string.find(v.Name, "Interactable") then
+                v:Destroy()
+            end
 
-			if v.Name == "Map" then
-				for _, v in pairs(v:GetChildren()) do
-					if v.Name ~= "Union" then
-						v:Destroy()
-					end
-				end
-			end
-		end
+            if v.Name == "Map" then
+                for _, v in pairs(v:GetChildren()) do
+                    if v.Name ~= "Union" then
+                        v:Destroy()
+                    end
+                end
+            end
+        end
 
-		game:GetService("Workspace"):WaitForChild("ALWAYS_RENDERING"):Destroy()
-	end)
+        game:GetService("Workspace"):WaitForChild("ALWAYS_RENDERING"):Destroy()
+    end)
 
-	
+    
 
 local WindowFocusReleasedFunction = function()
     RunService:Set3dRenderingEnabled(false)
@@ -124,4 +124,30 @@ w.DescendantAdded:Connect(function(v)
         end
     end)
 end)
-	
+    game:GetService("Lighting"):ClearAllChildren()
+
+    for _, v in pairs(Workspace:GetDescendants()) do
+        clearTextures(v)
+    end
+
+    Workspace.DescendantAdded:Connect(function(v)
+        clearTextures(v)
+    end)
+
+    for _, v in pairs(game.Players:GetChildren()) do
+        for _, v2 in pairs(v.Character:GetDescendants()) do
+            if v2:IsA("BasePart") or v2:IsA("Decal") then
+                v2.Transparency = 1
+            end
+        end
+    end
+
+    game.Players.PlayerAdded:Connect(function(player)
+        player.CharacterAdded:Connect(function(character)
+            for _, v in pairs(character:GetDescendants()) do
+                if v:IsA("BasePart") or v:IsA("Decal") then
+                    v.Transparency = 1
+                end
+            end
+        end)
+    end)
