@@ -1,3 +1,4 @@
+local plr = game.Players.LocalPlayer
 for k,v in workspace:GetChildren() do 
     if v.Name ~= plr.Name and v.Name ~= "Camera"  then 
         pcall(function() 
